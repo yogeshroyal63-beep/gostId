@@ -3,3 +3,4 @@ __pycache__/
 *.pyc
 .env
 ml/data/*.csv" > .gitignore
+venv/venv/
