@@ -1,0 +1,108 @@
+:root {
+  --bg-void: #020408;
+  --bg-deep: #060d14;
+  --bg-surface: #0b1520;
+  --bg-elevated: #111e2e;
+  --bg-overlay: #162130;
+
+  --border-subtle: rgba(255, 255, 255, 0.05);
+  --border-dim: rgba(255, 255, 255, 0.09);
+  --border-mid: rgba(255, 255, 255, 0.14);
+
+  --text-primary: #f0f4f8;
+  --text-secondary: #8ba3b8;
+  --text-muted: #4a6578;
+  --text-dim: #2a3f52;
+
+  --cyan: #00e5ff;
+  --cyan-dim: rgba(0, 229, 255, 0.15);
+  --cyan-glow: rgba(0, 229, 255, 0.25);
+
+  --green: #00ff88;
+  --green-dim: rgba(0, 255, 136, 0.12);
+  --amber: #ffb800;
+  --amber-dim: rgba(255, 184, 0, 0.12);
+  --orange: #ff6b2b;
+  --orange-dim: rgba(255, 107, 43, 0.12);
+  --red: #ff2d55;
+  --red-dim: rgba(255, 45, 85, 0.12);
+
+  --font-display: 'Syne', sans-serif;
+  --font-mono: 'Space Mono', monospace;
+
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+  --radius-xl: 24px;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  background: var(--bg-void);
+  color: var(--text-primary);
+  font-family: var(--font-display);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+::-webkit-scrollbar {
+  width: 4px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-deep);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border-mid);
+  border-radius: 2px;
+}
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(0.8); }
+}
+
+@keyframes scan-line {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(100vh); }
+}
+
+@keyframes fade-in-up {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes score-flash {
+  0% { box-shadow: 0 0 0 0 var(--flash-color, rgba(0, 229, 255, 0.4)); }
+  70% { box-shadow: 0 0 0 16px rgba(0, 0, 0, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(0, 0, 0, 0); }
+}
+
+@keyframes drift {
+  0%, 100% { transform: translateY(0px) translateX(0px); }
+  33% { transform: translateY(-8px) translateX(4px); }
+  66% { transform: translateY(4px) translateX(-6px); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
